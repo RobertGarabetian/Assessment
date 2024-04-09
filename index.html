@@ -13,17 +13,6 @@
         <h1 class="title">Sci-Fi Movies</h1>
     </header>
     <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
-        <form id="searchForm">
-            <label for="searchInput"></label>
-            <input type="text" id="searchInput" name="search" placeholder="Search for a movie!">
-            <button type="submit" class="form-button">Search</button>
-        </form>
         <div class="dropdown">
             <button class="button">Filter By:</button>
             <div class="dropdown-content">
@@ -32,6 +21,41 @@
                 <a href="#" onclick="sortByRating()">Rating</a>
             </div>
         </div>
+        <button class="button" onclick="factAlert();">
+            Fun Facts!
+        </button>
+        <button class="button" onclick="removeLastCard();">
+            Remove A Movie!
+        </button>
+
+        <button class="button" onclick="openForm()">Add A Movie!</button>
+        <div id="contentAdd" class="content-add">
+            <button id="closeButton" type="submit" onclick="closeForm()">X</button>
+            <h2>Please enter the listed information about the movie!</h2>
+            <form id="searchFormAdd">
+                <label for="inputTitle">Title</label>
+                <input type="text" id="inputTitle" name="inputTitle" placeholder="title">
+
+                <label for="inputRating">Rating</label>
+                <input type="text" id="inputRating" name="inputRating" placeholder="Rotten Tomatoes score">
+
+                <label for="inputIMG">Poster Image Address</label>
+                <input type="text" id="inputIMG" name="inputIMG" placeholder="image url">
+
+                <label for="inputDirector">Film Director</label>
+                <input type="text" id="inputDirector" name="inputDirector" placeholder="director">
+
+                <label for="inputDate">Release Date</label>
+                <input type="date" id="inputDate" name="inputDate" placeholder="yyyy-mm-dd">
+
+                <button type="submit" class="form-button">Submit</button>
+            </form>
+        </div>
+        <form id="searchForm">
+            <label for="searchInput"></label>
+            <input type="text" id="searchInput" name="search" placeholder="Search for a movie!">
+            <button type="submit" class="form-button">Search</button>
+        </form>
     </div>
     <div id="card-container">
 
@@ -40,11 +64,20 @@
     <div class="card" style="display: none;">
         <div class="card-content">
             <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li class="rating">Bullet Point 1</li>
-                <li class="date">Bullet Point 2</li>
-                <li>Bullet Point 3</li>
+            <img src="" alt="Movie Poster">
+            <ul class="detail-list">
+                <li>
+                    <h4>Rotten Tomatoes Score</h4>
+                    <div class="rating"></div>
+                </li>
+                <li>
+                    <h4>Release Date</h4>
+                    <div class="date"></div>
+                </li>
+                <li>
+                    <h4>Director</h4>
+                    <div class="director"></div>
+                </li>
             </ul>
         </div>
     </div>
