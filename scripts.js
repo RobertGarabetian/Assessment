@@ -26,7 +26,7 @@
 
 // Your final submission should have much more data than this, and 
 // you should use more than just an array of strings to store it all.
-let movies = [
+const originalMovies = [
     {
     "title": "Arrival",
     "poster": "https://media.posterlounge.com/img/products/660000/651583/651583_poster.jpg",
@@ -107,6 +107,7 @@ const facts = [
     "For Dune: Part Two, Stellan Skarsg\u00E5rd body makeup took 8 hours to apply and 2 hours to remove for every day of shooting."
 ];
 
+let movies = originalMovies.slice();
 // This function adds cards the page to display the data in the array
 function showCards() {
     const cardContainer = document.getElementById("card-container");
@@ -186,10 +187,17 @@ function formatDate(date) {
 function openForm() {
     document.getElementById("contentAdd").style.display = "block";
 }
+
 function closeForm(){
     document.getElementById("searchFormAdd").reset();
     document.getElementById("contentAdd").style.display = "none";
 }
+
+function arrayReset(){
+    movies = originalMovies;
+    showCards();
+}
+
 
 
 document.addEventListener("DOMContentLoaded", ()=>{

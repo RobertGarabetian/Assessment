@@ -149,8 +149,8 @@ button {
 #searchFormAdd{
     height: auto;
     width: auto;
-    background-color: lightgrey;
-    border: solid #00FFFF;
+    background-color: trasnparent;
+    border: none;
     border-radius: 10px;
     font-size: 22px;
     margin: 5px;
@@ -167,22 +167,22 @@ button {
     transform: translate(-50%, -50%);
     z-index: 1;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     color: white;
 }
 .content-add h2{
-    margin: 0 0 10px 0;
+    margin: 10px;
 }
 #searchFormAdd input {
-    margin: 0 auto;
+    margin: 0;
     width: 450px;
     height: 10px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     background-color: transparent;
-    border: none;
+    border: solid #29c5c5;
     font-size: medium;
 }
 #searchFormAdd input:focus{
@@ -192,9 +192,17 @@ button {
 
 
 #searchFormAdd button{
-    margin-bottom: 10px;
     display: block;
+    margin: 10px auto;
+    border: solid #29c5c5;
+    width: 485px;
  }
+ #searchFormAdd button:hover{
+    background-color: #00FFFF;
+    transform: translateY(-2px);
+    color: black;
+ }
+
 #searchFormAdd h2{
     display: flex;
 }
@@ -202,7 +210,9 @@ button {
     float: right;
 }
 #searchFormAdd label{
-    color: black;
+    margin:5px;
+    color: white;
     padding: 12px;
     font-size: medium;
 }
+
