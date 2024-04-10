@@ -13,6 +13,7 @@
         <h1 class="title">Sci-Fi Movies</h1>
     </header>
     <div class="footer">
+        <!-- Filter -->
         <div class="dropdown">
             <button class="button">Filter By:</button>
             <div class="dropdown-content">
@@ -21,19 +22,18 @@
                 <a href="#" onclick="sortByRating()">Rating</a>
             </div>
         </div>
+        <!-- Fact Button-->
         <button class="button" onclick="factAlert();">
             Fun Facts
         </button>
-        <button class="button" onclick="removeLastCard();">
-            Remove A Movie
-        </button>
+        <!-- Reset Button -->
         <button class="button" onclick="arrayReset();">
-            Reset List
+            Reset
         </button>
-
-        <button class="button" onclick="openForm()">Add A Movie!</button>
-        <div id="contentAdd" class="content-add">
-            <button id="closeButton" type="submit" onclick="closeForm()">X</button>
+        <!-- Add Movie Form -->
+        <button class="button" onclick="openAddForm()">Add A Movie!</button>
+        <div id="contentAdd" class="content">
+            <button id="closeButton" type="submit" onclick="closeAddForm()">X</button>
             <h2>Please enter the listed information about the movie!</h2>
             <form id="searchFormAdd">
                 <label for="inputTitle">Title</label>
@@ -54,10 +54,23 @@
                 <button type="submit" class="form-button">Submit</button>
             </form>
         </div>
+        <!-- Remove Movie Form  -->
+        <button class="button" onclick="openRemoveForm()">Remove A Movie!</button>
+        <div id="contentRemove" class="content">
+            <button id="closeButton" type="submit" onclick="closeRemoveForm()">X</button>
+            <h2>Please enter the listed information about the movie!</h2>
+            <form id="searchFormRemove">
+                <label for="inputRemoveTitle">Title</label>
+                <input type="text" id="inputRemoveTitle" name="inputRemoveTitle" placeholder="title">
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <!-- Search Form -->
         <form id="searchForm">
             <label for="searchInput"></label>
             <input type="text" id="searchInput" name="search" placeholder="Search for a movie!">
-            <button type="submit" class="form-button">Search</button>
+            <button id="searchFieldButton" type="submit">Search</button>
         </form>
     </div>
     <div id="card-container">

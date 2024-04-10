@@ -104,14 +104,18 @@ button {
     border-radius: 10px;
     color: white;
     font-size: 22px;
+    height: auto;
+    margin: 0 auto;
 }
 #searchInput:focus{
     outline: none;
     background-image: none;
 }
 #searchForm{
+    display: flex;
+    align-items: center;
     height: auto;
-    width: auto;
+    width: 400px;
     background-color: transparent;
     border: solid #00FFFF;
     border-radius: 10px;
@@ -119,11 +123,12 @@ button {
     margin: 5px;
 }
 
-.form-button{
+#searchFieldButton{
+    float: right;
     margin: 0;
     border: none;
+    width: auto;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -148,6 +153,8 @@ button {
 
 
 
+
+
 #searchFormAdd{
     height: auto;
     width: auto;
@@ -159,7 +166,7 @@ button {
     padding: 6px;
 }
 
-.content-add{
+.content{
     width: 500px;
     display: none;
     position: fixed;
@@ -172,10 +179,10 @@ button {
     padding: 10px 10px 0 10px;
     color: white;
 }
-.content-add h2{
+.content h2{
     margin: 10px;
 }
-#searchFormAdd input {
+.content input {
     margin: 0;
     width: 450px;
     height: 10px;
@@ -187,34 +194,47 @@ button {
     border: solid #29c5c5;
     font-size: medium;
 }
-#searchFormAdd input:focus{
+.content input:focus{
     outline: none;
     background-image: none;
 }
 
 
-#searchFormAdd button{
+form button{
     display: block;
     margin: 10px auto;
     border: solid #29c5c5;
     width: 485px;
  }
- #searchFormAdd button:hover{
+.content button:hover{
     background-color: #00FFFF;
     transform: translateY(-2px);
     color: black;
  }
 
-#searchFormAdd h2{
+.content h2{
     display: flex;
 }
 #closeButton{
     float: right;
 }
-#searchFormAdd label{
+.content label{
     margin:5px;
     color: white;
     padding: 12px;
     font-size: medium;
 }
+
+
+#searchFormRemove{
+    height: auto;
+    width: auto;
+    background-color: trasnparent;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    margin: 5px;
+    padding: 6px;
+}
+
 

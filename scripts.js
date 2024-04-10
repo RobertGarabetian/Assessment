@@ -100,7 +100,7 @@ const originalMovies = [
 ];
 
 const facts = [
-    "The Black Hole In 'Interstellar' Is So Accurate, It Spawned Numerous Academic Papers.",
+    "The black hole in 'Interstellar' is so accurate, it spawned numerous academic papers.",
     "The Matrix' code represents Japanese sushi recipes.",
     "Megamind has the same head to body proportion as a toddler, or a Lego minifigure.",
     "Stanley Kubrick won his only Oscar for 2001: A Space Odyssey.",
@@ -108,6 +108,7 @@ const facts = [
 ];
 
 let movies = originalMovies.slice();
+
 // This function adds cards the page to display the data in the array
 function showCards() {
     const cardContainer = document.getElementById("card-container");
@@ -184,17 +185,27 @@ function formatDate(date) {
     return new Date(date).toLocaleDateString('en-US', options);
 }
 
-function openForm() {
+function openAddForm() {
     document.getElementById("contentAdd").style.display = "block";
 }
+function openRemoveForm() {
+    document.getElementById("contentRemove").style.display = "block";
+}
 
-function closeForm(){
+function closeAddForm(){
     document.getElementById("searchFormAdd").reset();
     document.getElementById("contentAdd").style.display = "none";
 }
+function closeRemoveForm(){
+    document.getElementById("searchFormRemove").reset();
+    document.getElementById("contentRemove").style.display = "none";
+}
+
 
 function arrayReset(){
-    movies = originalMovies;
+    movies = originalMovies.slice();
+    // console.log(movies[0])
+    // console.log(originalMovies[0])
     showCards();
 }
 
@@ -222,12 +233,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
             "director": inputDirector.value
         })
         showCards();
-        closeForm();
+        closeAddForm();
+    });
+
+    document.getElementById("searchFormRemove").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const inputRemoveTitle = document.getElementById("inputRemoveTitle").value;
+
+        movies = movies.filter(movie => movie.title !== inputRemoveTitle);
+
+        showCards();
+        closeRemoveForm();
     });
 
 
-    document.getElementById("searchForm").addEventListener("submit", function(event){
-        event.preventDefault();
+    document.getElementById("searchForm").addEventListener("submit", function(e){
+        e.preventDefault();
     
         const searchInput = document.getElementById("searchInput");
         const searchQuery = searchInput.value;
